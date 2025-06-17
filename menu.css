@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  background-color: #fdf4e3;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tv-screen {
+  background-color: #fff;
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 160px;
+  height: auto;
+}
+
+.mensaje p {
+  font-size: 24px;
+  color: #5a3b1e;
+  margin: 0;
+}
+
+.menu-botones {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 16px 32px;
+  font-size: 18px;
+  background-color: #4ba494;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 200px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3b867a;
+}

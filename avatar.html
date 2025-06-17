@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Presentación del Avatar</title>
+  <link rel="stylesheet" href="avatar.css">
+</head>
+<body>
+  <div class="tv-screen">
+    <div class="avatar-section">
+      <img src="images/avatar-cuidadora.png" alt="Avatar Cuidadora" class="avatar">
+      <div class="mensaje-avatar">
+        <p><strong id="saludo">Hola.</strong><br>Seré tu asistente virtual.</p>
+      </div>
+    </div>
+    <button onclick="location.href='menu.html'" class="continuar-btn">Continuar</button>
+  </div>
+
+  <script>
+    const nombre = localStorage.getItem('nombreUsuario') || "María";
+    document.getElementById('saludo').innerText = `Hola, ${nombre}.`;
+  </script>
+</body>
+</html>

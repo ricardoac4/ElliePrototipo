@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Datos Personales</title>
+  <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+  <div class="tv-screen">
+    <h2>Para ayudarte mejor,<br>necesito conocerte un poquito.</h2>
+
+    <form onsubmit="guardarDatos(event)">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="number" id="edad" placeholder="Edad" required>
+      <input type="text" id="medicacion" placeholder="Medicación" required>
+      <input type="text" id="contacto" placeholder="Persona de contacto" required>
+
+      <button type="submit">Continuar</button>
+    </form>
+  </div>
+
+  <script>
+    function guardarDatos(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      localStorage.setItem('nombreUsuario', nombre);
+      window.location.href = "avatar.html";
+    }
+  </script>
+</body>
+</html>

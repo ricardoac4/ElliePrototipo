@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Principal</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <div class="tv-screen">
+    <div class="cabecera">
+      <img src="images/avatar-cuidadora.png" alt="Avatar Cuidadora" class="avatar">
+      <div class="mensaje">
+        <p id="saludo"></p>
+      </div>
+    </div>
+
+    <div class="menu-botones">
+      <button>Hablar</button>
+      <button>Actividades</button>
+      <button>Recordatorios</button>
+    </div>
+  </div>
+
+  <script>
+    const nombre = localStorage.getItem('nombreUsuario') || "María";
+    document.getElementById('saludo').innerText = `Hola, ${nombre}. Hoy estaré contigo.`;
+  </script>
+</body>
+</html>
