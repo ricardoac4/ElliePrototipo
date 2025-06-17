@@ -16,20 +16,22 @@
     <button onclick="location.href='menu.html'" class="continuar-btn">Continuar</button>
   </div>
 
-  <script>
-    const nombre = localStorage.getItem('nombreUsuario') || "María";
-    document.getElementById('saludo').innerText = `Hola, ${nombre}.`;
-  </script>
-</body>
-</html>
 <script>
-  const nombre = localStorage.getItem('nombreUsuario') || "María";
-  document.getElementById('saludo').innerText = `Hola, ${nombre}.`;
+  window.addEventListener('DOMContentLoaded', () => {
+    const nombre = localStorage.getItem('nombreUsuario') || 'María';
+    
+    // Actualizar el texto del saludo
+    document.getElementById('saludo').innerText = `Hola, ${nombre}.`;
 
-  // Voz del navegador
-  const mensaje = new SpeechSynthesisUtterance(`Hola, ${nombre}. Seré tu asistente virtual.`);
-  mensaje.lang = "es-ES";
-  mensaje.pitch = 1;
-  mensaje.rate = 1;
-  speechSynthesis.speak(mensaje);
+    // Reproducir audio con voz
+    const mensaje = new SpeechSynthesisUtterance(`Hola, ${nombre}. Seré tu asistente virtual.`);
+    mensaje.lang = "es-ES";
+    mensaje.pitch = 1;
+    mensaje.rate = 1;
+
+    // Esperar que las voces estén listas antes de hablar
+    speechSynthesis.onvoiceschanged = () => {
+      speechSynthesis.speak(mensaje);
+    };
+  });
 </script>
