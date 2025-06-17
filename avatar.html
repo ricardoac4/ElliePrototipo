@@ -22,3 +22,14 @@
   </script>
 </body>
 </html>
+<script>
+  const nombre = localStorage.getItem('nombreUsuario') || "María";
+  document.getElementById('saludo').innerText = `Hola, ${nombre}.`;
+
+  // Voz del navegador
+  const mensaje = new SpeechSynthesisUtterance(`Hola, ${nombre}. Seré tu asistente virtual.`);
+  mensaje.lang = "es-ES";
+  mensaje.pitch = 1;
+  mensaje.rate = 1;
+  speechSynthesis.speak(mensaje);
+</script>
